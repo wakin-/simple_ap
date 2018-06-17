@@ -20,7 +20,6 @@ $ python manage.py makemigrations activitypub
 $ python manage.py migrate
 $ python manage.py collectstatic
 $ python manage.py createsuperuser
-
 ```
 
 nginxでHTTPS化して公開する準備。
