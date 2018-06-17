@@ -56,7 +56,8 @@ server {
     }
     location /media/ {
         alias /path/to/simple_ap/media/;
-    }}
+    }
+}
 ```
 
 djangoを立ち上げてWebサーバを公開
