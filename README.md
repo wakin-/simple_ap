@@ -1,5 +1,7 @@
 # simple_ap
 
+RSSフィードを定期チェックして更新情報をActivityPubでフォロワーに配信するAPIサーバです。APIサーバはflaskを使い、DB周りはdjangoを使ってます。
+
 ## 要件
 - python3
 - virtualenv
