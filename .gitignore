@@ -1,0 +1,8 @@
+env
+media/images/*
+!default-icon.png
+static
+db.sqlite3
+__pycache__
+migrations
+fixture
