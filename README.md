@@ -82,7 +82,7 @@ $ python manage.py rss
 cronで定期的にRSSの更新を確認。新着があればPOST。
 
 ```
-* * * * * /path/to/simple_ap/env/bin/python /path/to/simple_ap/rss_importer.py
+* * * * * cd /path/to/simple_ap ; env/bin/python manage.py rss
 ```
 
 外部インスタンスの検索エリアから https://~/<name> でアカウントを検索し、リモートフォロー。
