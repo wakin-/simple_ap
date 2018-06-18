@@ -3,6 +3,7 @@ import os
 import json
 import magic
 import requests
+import re
 from urllib.parse import urlparse
 from django.db import models
 from django.conf import settings
@@ -18,10 +19,11 @@ class BaseModel(models.Model):
         abstract=True
 
 class Account(BaseModel):
-    name        = models.CharField(max_length=32, default='')
-    feed_url    = models.CharField(max_length=255, default='')
-    private_key = models.TextField(default='')
-    public_key  = models.TextField(default='')
+    name         = models.CharField(max_length=32, default='')
+    display_name = models.CharField(max_length=32, default='')
+    feed_url     = models.CharField(max_length=255, default='')
+    private_key  = models.TextField(default='')
+    public_key   = models.TextField(default='')
 
     def get_image_path(self, filename):
         prefix = 'images/'
@@ -70,7 +72,7 @@ class Account(BaseModel):
             '@context': 'https://www.w3.org/ns/activitystreams',
             'type': 'Person',
             'id': self.ap_id(),
-            'name': self.name,
+            'name': self.display_name,
             'preferredUsername': self.name,
             'summary': 'my simple activitypub',
             'inbox': settings.SERVER_URL+'/'+self.name+'/inbox',

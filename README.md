@@ -13,16 +13,30 @@ RSSフィードを定期チェックして更新情報をActivityPubでフォロ
 ```
 $ git clone git@github.com:wakin-/simple_ap.git
 $ cd simple_ap
+$ vi fixture/setup.json
+```
 
-$ virtualenv env -p python3
-$ source env/bin/activate
+初期データの準備。
 
-$ pip install -r requirements.txt
+```json:fixture/setup.json
+[
+  {
+    "model": "activitypub.account",
+    "pk": 1,
+    "fields": {
+      "name": "<アカウントID 半角英数-_>",
+      "display_name": "<表示名>",
+      "feed_url": "<RSSフィードのURL>",
+      "icon": "<アイコンのパス>"
+    }
+  }
+]
+```
 
-$ python manage.py makemigrations activitypub
-$ python manage.py migrate
-$ python manage.py collectstatic
-$ python manage.py createsuperuser
+セットアップスクリプトの実行。
+
+```
+$ ./setup.sh
 ```
 
 nginxでHTTPS化して公開する例。
@@ -53,22 +67,11 @@ server {
     }
 
     # メディアファイルの公開用
-    location /static/ {
-        alias /path/to/simple_ap/static/;
-    }
     location /media/ {
         alias /path/to/simple_ap/media/;
     }
 }
 ```
-
-djangoを立ち上げてWebサーバを公開。
-
-```
-$ uwsgi --ini django.ini
-```
-
-https://~/admin から Account 情報を登録。
 
 現在のRSS情報を取得。
 

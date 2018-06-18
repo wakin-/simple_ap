@@ -5,4 +5,5 @@ static
 db.sqlite3
 __pycache__
 migrations
-fixture
+fixture/*
+!example.json
