@@ -85,4 +85,4 @@ cronで定期的にRSSの更新を確認。新着があればPOST。
 * * * * * cd /path/to/simple_ap ; env/bin/python manage.py rss
 ```
 
-外部インスタンスの検索エリアから https://~/<name> でアカウントを検索し、リモートフォロー。
+外部インスタンスの検索エリアから `https://~/<name>` でアカウントを検索し、リモートフォロー。
