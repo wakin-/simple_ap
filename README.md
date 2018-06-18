@@ -3,8 +3,7 @@
 RSSフィードを定期チェックして更新情報をActivityPubでフォロワーに配信するAPIサーバです。APIサーバはflaskを使い、DB周りはdjangoを使ってます。Mastodonとの連携を想定しています。
 
 ## 要件
-- python3
-- virtualenv
+- Ubuntu
 - nginx等Webサーバ
 - SSL/TLS証明書
 
@@ -36,6 +35,7 @@ $ vi fixture/setup.json
 セットアップスクリプトの実行。
 
 ```
+$ chmod +x setup.sh
 $ ./setup.sh
 ```
 
