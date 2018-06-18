@@ -85,10 +85,4 @@ cronで定期的にRSSの更新を確認。新着があればPOST。
 * * * * * /path/to/simple_ap/env/bin/python /path/to/simple_ap/rss_importer.py
 ```
 
-flaskを立ち上げてAPIサーバを公開。
-
-```
-$ uwsgi --ini flask.ini
-```
-
 外部インスタンスの検索エリアから https://~/<name> でアカウントを検索し、リモートフォロー。
