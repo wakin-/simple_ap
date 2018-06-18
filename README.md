@@ -1,10 +1,12 @@
 # simple_ap
 
-RSSフィードを定期チェックして更新情報をActivityPubでフォロワーに配信するAPIサーバです。APIサーバはflaskを使い、DB周りはdjangoを使ってます。
+RSSフィードを定期チェックして更新情報をActivityPubでフォロワーに配信するAPIサーバです。APIサーバはflaskを使い、DB周りはdjangoを使ってます。Mastodonとの連携を想定しています。
 
 ## 要件
 - python3
 - virtualenv
+- nginx等Webサーバ
+- SSL/TLS証明書
 
 ## 使い方
 
@@ -23,7 +25,7 @@ $ python manage.py collectstatic
 $ python manage.py createsuperuser
 ```
 
-nginxでHTTPS化して公開する準備。
+nginxでHTTPS化して公開する例。
 
 ```conf
 server {
@@ -60,28 +62,30 @@ server {
 }
 ```
 
-djangoを立ち上げてWebサーバを公開
+djangoを立ち上げてWebサーバを公開。
 
 ```
 $ uwsgi --ini django.ini
 ```
 
-https://~/admin から Account の情報を登録
+https://~/admin から Account 情報を登録。
 
-現在のRSS情報の取得
+現在のRSS情報を取得。
 
 ```
 $ python manage.py rss
 ```
 
-cronでRSSの更新を確認
+cronで定期的にRSSの更新を確認。新着があればPOST。
 
 ```
 * * * * * /path/to/simple_ap/env/bin/python /path/to/simple_ap/rss_importer.py
 ```
 
-flaskを立ち上げてAPIサーバを公開
+flaskを立ち上げてAPIサーバを公開。
 
 ```
 $ uwsgi --ini flask.ini
 ```
+
+外部インスタンスの検索エリアから https://~/<name> でアカウントを検索し、リモートフォロー。
