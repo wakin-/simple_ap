@@ -12,7 +12,6 @@ RSSフィードを定期チェックして更新情報をActivityPubでフォロ
 $ git clone git@github.com:wakin-/simple_ap.git
 $ cd simple_ap
 
-$ pip install virtualenv
 $ virtualenv env -p python3
 $ source env/bin/activate
 

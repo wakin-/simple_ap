@@ -107,7 +107,7 @@ class Note(BaseModel):
         super(Note, self).save(*args, **kwargs)
 
     def contentHtml(self):
-        return '<p>'+self.content+'<br /><a href="'+self.url+' target="_blank">'+self.url+'</a></p>'
+        return '<p>'+self.content+'<br /><a href="'+self.url+'" target="_blank">'+self.url+'</a></p>'
 
     def ap_id(self):
         return self.account.ap_id()+'/'+str(self.id)
