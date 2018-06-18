@@ -6,4 +6,4 @@ db.sqlite3
 __pycache__
 migrations
 fixture/*
-!example.json
+!setup.json

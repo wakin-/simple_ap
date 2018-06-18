@@ -1,0 +1,12 @@
+[
+  {
+    "model": "activitypub.account",
+    "pk": 1,
+    "fields": {
+      "name": "simple_ap",
+      "display_name": "テストアカウント",
+      "feed_url": "http://b.hatena.ne.jp/search/tag?safe=on&q=%E6%BB%8B%E8%B3%80&users=5&mode=rss",
+      "icon": "images/default-icon.png"
+    }
+  }
+]
