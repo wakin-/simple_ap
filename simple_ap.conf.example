@@ -1,0 +1,6 @@
+[program:simple_ap]  ; プロセスの名前
+numprocs=1  ; 起動するプロセス数
+autostart=true  ; autostartする
+autorestart=true  ; 自動で再起動させる
+redirect_stderr=true  ; 標準エラーを出力する
+stdout_logfile=/var/log/supervisor/simple_ap.log  ; ログファイルの出力先

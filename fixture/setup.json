@@ -6,7 +6,9 @@
       "name": "simple_ap",
       "display_name": "テストアカウント",
       "feed_url": "http://b.hatena.ne.jp/search/tag?safe=on&q=%E6%BB%8B%E8%B3%80&users=5&mode=rss",
-      "icon": "images/default-icon.png"
+      "icon": "images/default-icon.png",
+      "created_at": "2018-06-18 12:00:00",
+      "updated_at": "2018-06-18 12:00:00"
     }
   }
 ]

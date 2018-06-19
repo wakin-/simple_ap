@@ -3,8 +3,7 @@
 RSSフィードを定期チェックして更新情報をActivityPubでフォロワーに配信するAPIサーバです。APIサーバはflaskを使い、DB周りはdjangoを使ってます。Mastodonとの連携を想定しています。
 
 ## 要件
-- python3
-- virtualenv
+- Ubuntu
 - nginx等Webサーバ
 - SSL/TLS証明書
 
@@ -36,6 +35,7 @@ $ vi fixture/setup.json
 セットアップスクリプトの実行。
 
 ```
+$ chmod +x setup.sh
 $ ./setup.sh
 ```
 
@@ -82,7 +82,7 @@ $ python manage.py rss
 cronで定期的にRSSの更新を確認。新着があればPOST。
 
 ```
-* * * * * /path/to/simple_ap/env/bin/python /path/to/simple_ap/rss_importer.py
+* * * * * cd /path/to/simple_ap ; env/bin/python manage.py rss
 ```
 
-外部インスタンスの検索エリアから https://~/<name> でアカウントを検索し、リモートフォロー。
+外部インスタンスの検索エリアから `https://~/<name>` でアカウントを検索し、リモートフォロー。
