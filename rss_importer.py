@@ -18,10 +18,8 @@ def run():
     for account in accounts:
         new_feeds = get_new_feeds(account)
         if not new_feeds.empty:
-            new_notes = []
             for key, row in new_feeds.iterrows():
-                note = Note(account=account, content=row['summary'], url=row['id'])
-                new_notes.append(note)
-                print('new feed:'+row['summary'])
+                note = Note(account=account, content=row['title'], url=row['id'])
+                note.save()
+                print('new feed:'+row['title'])
                 note.post()
-            Note.objects.bulk_create(new_notes)
