@@ -22,4 +22,4 @@ requests==2.19.0
 six==1.11.0
 urllib3==1.22
 uWSGI==2.0.17
-Werkzeug==0.14.1
+Werkzeug==0.15.3
