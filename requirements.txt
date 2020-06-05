@@ -1,7 +1,7 @@
 certifi==2018.4.16
 chardet==3.0.4
 click==6.7
-Django==2.0.6
+Django==2.2.13
 feedparser==5.2.1
 Flask==1.0.2
 httpsig==1.2.0
