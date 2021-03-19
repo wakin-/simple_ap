@@ -7,7 +7,7 @@ Flask==1.0.2
 httpsig==1.2.0
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 MarkupSafe==1.0
 numpy==1.14.4
 pandas==0.23.0
